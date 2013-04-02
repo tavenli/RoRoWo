@@ -1,0 +1,367 @@
+@charset "utf-8";
+* {
+	padding:0px;
+	margin:0px;
+}
+html, body {
+	width:100%;
+	height:100%;
+}
+body {
+	height:100%;
+	font-size:12px;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	overflow: hidden;
+	z-index:1;
+}
+body.showmenu {
+	background:url(../images/leftmenu_bg.gif) -11px top repeat-y;
+}
+body.hidemenu {
+	background:none;
+}
+ul {
+	list-style:none;
+}
+.head {
+	width:100%;
+	height:66px;
+	overflow:hidden;
+	z-index:8;
+	position:relative;
+}
+.top {
+	height:37px;
+	width:100%;
+	background:url(../images/admin_top_bg.jpg) left top repeat-x;
+	overflow:hidden;
+	clear:both;
+}
+.top .top_logo {
+	width:170px;
+	height:37px;
+	float:left;
+}
+.top .top_link {
+	float:right;
+	padding:5px 10px 0px 0px;
+}
+.top .top_link ul {
+	float:left;
+	padding:8px 0px 0px 0px;
+	line-height:13px;
+	overflow:hidden;
+}
+.top .top_link ul li.welcome {
+	border-right:none;
+	color:#A8C280;
+	padding-right:6px;
+}
+.top .top_link ul li {
+	float:left;
+	color:#CBDAB3;
+	border-right:1px solid #61910F;
+	margin-right:-1px;
+}
+.top .top_link ul li a {
+	color:#CBDAB3;
+	padding-left:11px;
+	padding-right:11px;
+	text-decoration:none;
+}
+.top .top_link ul li a:hover {
+	color:#FFF;
+	text-decoration:underline;
+}
+.top .top_link .quick {
+	padding:3px 0px 0px 0px;
+	float:left;
+}
+.top .top_link .quick a {
+	display:block;
+	text-decoration:none;
+	color:#C60;
+	float:left;
+	line-height:21px;
+	height:21px;
+	overflow:hidden;
+}
+.top .top_link .quick a.ac_qucikmenu {
+	width:81px;
+	background:url(../images/quick_bg.gif) left top no-repeat;
+	letter-spacing:1px;
+	text-indent:8px;
+}
+.top .top_link .quick a.ac_qucikmenu:hover {
+	background:url(../images/quick_bg.gif) left bottom no-repeat;
+}
+.top .top_link .quick a.ac_qucikadd {
+	width:19px;
+	background:url(../images/quick_bg.gif) right top no-repeat;
+}
+.top .top_link .quick a.ac_qucikadd:hover {
+	background:url(../images/quick_bg.gif) right bottom no-repeat;
+}
+.topnav {
+	width:100%;
+	height:29px;
+	background:url(../images/admin_top_bg.jpg) left -37px repeat-x;
+	overflow:hidden;
+	clear:both;
+}
+.topnav .menuact {
+	width:168px;
+	float:left;
+	line-height:29px;
+}
+.topnav .menuact a {
+	color:#999999;
+	padding-left:22px;
+	padding-right:3px;
+	text-decoration:none;
+}
+.topnav .menuact a:hover {
+	color:#FFF;
+	text-decoration:none;
+}
+.nav {
+	float:left;
+	padding-left:2px;
+	line-height:27px;
+	color:#999;
+}
+.nav ul li {
+	float:left;
+	display:block;
+	margin-left:4px;
+}
+.nav ul li a {
+	padding:0px 11px 0px 11px;
+	color:#FFCC00;
+	text-decoration:none;
+}
+.nav ul li a:hover {
+	color:#FFFFFF;
+}
+.nav ul li a.thisclass, .nav ul li a.thisclass:hover {
+	color:#4E8100;
+	display:block;
+	font-weight:bold;
+	background:#FFF;
+	line-height:23px;
+	border-top:2px solid #FFDE59;
+	margin-top:4px;
+	padding:0px 10px 0px 10px;
+}
+body.showmenu .left {
+	display:block;
+}
+body.hidemenu .left {
+	display:none;
+}
+.left {
+	position:absolute;
+	width:158px;
+	overflow:hidden;
+	z-index:6;
+}
+.menu {
+}
+.menu div {
+	display:none;
+}
+.menu dl {
+	float:right;
+}
+.menu dl dt {
+	width:146px;
+	height:23px;
+	text-indent:14px;
+	line-height:23px;
+	font-weight:bold;
+	letter-spacing:2px;
+	color:#859E69;
+	display:block;
+	background-image:url(../images/leftmenu_dt_bg.gif);
+	background-repeat:no-repeat;
+	background-position:left bottom;
+	margin-right:1px;
+	overflow:hidden;
+	cursor:pointer;
+	margin-top:10px;
+	float:right;
+	clear:both;
+}
+.menu dl dd {
+	text-align:right;
+	clear:both;
+	padding-top:5px;
+}
+.menu dl dd ul li {
+	width:148px;
+	height:31px;
+	overflow:hidden;
+	display:block;
+	float:right;
+}
+.menu dl dd ul li a {
+	overflow:hidden;
+	height:31px;
+	line-height:31px;
+	display:block;
+	color:#666;
+	padding-right:20px;
+	text-decoration:none;
+}
+.menu dl dd ul li a:hover {
+	color:#5E8E0C;
+	background:url(../images/leftmenu_li_on.gif) right 3px no-repeat;
+}
+.menu dl dd ul li a.thisclass, .menu dl dd ul li a.thisclass:hover {
+	color:#5E8E0C;
+	font-weight:bold;
+	background:url(../images/leftmenu_li_s.gif) right 3px no-repeat;
+}
+body.showmenu .right {
+	left:158px;
+}
+body.hidemenu .right {
+	left:0px;
+}
+.right {
+	position:absolute;
+	right:0;
+	top:66px !important;	
+	*top:0;
+	bottom:0px;
+	z-index:7;
+}
+.main {
+	height:100%;
+}
+.main iframe {
+	height:100%;
+	width:99.99%;
+	z-index:20;
+}
+.qucikmenu {
+	position:absolute;
+	right:10px;
+	top:32px;
+	z-index:9;
+	display:none;/*-moz-opacity:0.98;
+	filter:alpha(opacity=98);
+	/**/
+}
+.qucikmenu ul {
+	width:110px;
+	list-style:none;
+	border:1px solid #E7E7E7;
+	background:#FFF;
+}
+.qucikmenu ul li {
+	display:block;
+	text-align:left;
+}
+.qucikmenu ul li a {
+	height:29px;
+	line-height:29px;
+	display:block;
+	color:#666666;
+	padding-left:10px;
+	padding-right:10px;
+	text-decoration:none;
+}
+.qucikmenu ul li a:hover {
+	text-decoration:none;
+	background:#F7F7F7;
+}
+.pagemask {
+	width:100%;
+	height:100%;
+	background:#000;
+	position:absolute;
+	z-index:100;
+	filter:alpha(opacity=70);
+	-moz-opacity: 0.7;
+	opacity: 0.7;
+	display:none;
+}
+.iframemask {
+	position:absolute;
+	z-index:80;
+	top: 0;
+	left: 0;
+	background-color:#fff;
+	border:none;
+	filter:alpha(opacity=0);
+	-moz-opacity:0;
+	opacity: 0;
+	height:100%;
+	width:100%;
+	display:none;
+}
+.allmenu{
+	width:700px;
+	background:#FFF;
+	border: 4px solid #333;
+	z-index:999;
+	position:absolute;
+	left:50%;
+	top:38px;
+	margin-left:-350px;
+	display:none;
+	padding:5px 0px;
+	*text-align:center;
+	*width:708px;
+}
+.allmenu .allmenu-box{
+	width:686px;
+	margin:0px auto;
+	text-align:left;
+	overflow:hidden;
+	padding-left:2px;
+}
+.maptop{
+	float:left;
+	width:107px;
+	overflow:hidden;
+	padding-right:3px;
+	padding-left:3px;
+	border-right:1px solid #EEE;
+	border-left:1px solid #EEE;
+	margin-left:-1px;
+	*width:115px;
+}
+.maptop dt.bigitem {
+	padding:2px;
+	background:#455656;
+	color:#FFF;
+	line-height:19px;
+	font-weight:bold;
+	margin-bottom:3px;
+	text-indent:3px;
+}
+.mapitem dt
+{
+	line-height:21px;
+	font-weight:bold;
+	text-indent:10px;
+	background:#EFF1F1;
+}
+.mapitem ul{
+	margin-top:2px;	
+	margin-bottom:5px;	
+}
+.mapitem ul li {
+	text-indent:13px;
+	line-height:19px;
+	background:url(arrr.gif) 4px 6px no-repeat;
+}
+.allmenu a {
+	color:#5C604F;
+	text-decoration:none;
+}
+.allmenu a:hover{
+	color:#F63;	
+}

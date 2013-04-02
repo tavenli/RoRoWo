@@ -1,0 +1,434 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="RoRoWoDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="RoRoWoDBModelStoreContainer">
+          <EntitySet Name="BlogArticle" EntityType="RoRoWoDBModel.Store.BlogArticle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BlogCategory" EntityType="RoRoWoDBModel.Store.BlogCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BlogComment" EntityType="RoRoWoDBModel.Store.BlogComment" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BlogDigg" EntityType="RoRoWoDBModel.Store.BlogDigg" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BlogMaster" EntityType="RoRoWoDBModel.Store.BlogMaster" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="BlogTag" EntityType="RoRoWoDBModel.Store.BlogTag" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_BLOGARTI_REFERENCE_BLOGCATE" Association="RoRoWoDBModel.Store.FK_BLOGARTI_REFERENCE_BLOGCATE">
+            <End Role="BlogCategory" EntitySet="BlogCategory" />
+            <End Role="BlogArticle" EntitySet="BlogArticle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BLOGCOMM_REFERENCE_BLOGARTI" Association="RoRoWoDBModel.Store.FK_BLOGCOMM_REFERENCE_BLOGARTI">
+            <End Role="BlogArticle" EntitySet="BlogArticle" />
+            <End Role="BlogComment" EntitySet="BlogComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BLOGDIGG_REFERENCE_BLOGARTI" Association="RoRoWoDBModel.Store.FK_BLOGDIGG_REFERENCE_BLOGARTI">
+            <End Role="BlogArticle" EntitySet="BlogArticle" />
+            <End Role="BlogDigg" EntitySet="BlogDigg" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BlogArticle">
+          <Key>
+            <PropertyRef Name="ArticleID" />
+          </Key>
+          <Property Name="ArticleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Content" Type="nvarchar(max)" />
+          <Property Name="Description" Type="nvarchar" MaxLength="1000" />
+          <Property Name="ImageUrl" Type="nvarchar" MaxLength="500" />
+          <Property Name="Tag" Type="nvarchar" />
+          <Property Name="Hits" Type="int" Nullable="false" />
+          <Property Name="IsTop" Type="bit" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserIP" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="PublishTime" Type="datetime" Nullable="false" />
+          <Property Name="UpdateTime" Type="datetime" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="400" />
+          <Property Name="BlogCategory_CateID" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="BlogCategory">
+          <Key>
+            <PropertyRef Name="CateID" />
+          </Key>
+          <Property Name="CateID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CateName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ParentID" Type="int" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="SortID" Type="int" Nullable="false" />
+          <Property Name="ArticleCount" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="BlogComment">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="UserID" Type="int" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="IP" Type="nvarchar" MaxLength="50" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="VerifyUserID" Type="int" />
+          <Property Name="VerifyUserAccount" Type="nvarchar" MaxLength="50" />
+          <Property Name="BlogArticle_ArticleID" Type="int" />
+        </EntityType>
+        <EntityType Name="BlogDigg">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="DiggName" Type="nvarchar" MaxLength="50" />
+          <Property Name="SurpportType" Type="int" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="IP" Type="nvarchar" MaxLength="50" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="BlogArticle_ArticleID" Type="int" />
+        </EntityType>
+        <EntityType Name="BlogMaster">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="UserAccount" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="NickName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserPassWord" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="IsSystem" Type="bit" Nullable="false" />
+          <Property Name="State" Type="int" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="LoginCount" Type="int" Nullable="false" />
+          <Property Name="LastLogin" Type="datetime" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="BlogTag">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="TagID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="TagName" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="ParentID" Type="int" Nullable="false" />
+          <Property Name="State" Type="int" Nullable="false" />
+          <Property Name="SortID" Type="int" Nullable="false" />
+          <Property Name="ArticleCount" Type="int" Nullable="false" />
+          <Property Name="CreateTime" Type="datetime" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" MaxLength="400" />
+        </EntityType>
+        <Association Name="FK_BLOGARTI_REFERENCE_BLOGCATE">
+          <End Role="BlogCategory" Type="RoRoWoDBModel.Store.BlogCategory" Multiplicity="1" />
+          <End Role="BlogArticle" Type="RoRoWoDBModel.Store.BlogArticle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogCategory">
+              <PropertyRef Name="CateID" />
+            </Principal>
+            <Dependent Role="BlogArticle">
+              <PropertyRef Name="BlogCategory_CateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BLOGCOMM_REFERENCE_BLOGARTI">
+          <End Role="BlogArticle" Type="RoRoWoDBModel.Store.BlogArticle" Multiplicity="0..1" />
+          <End Role="BlogComment" Type="RoRoWoDBModel.Store.BlogComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogArticle">
+              <PropertyRef Name="ArticleID" />
+            </Principal>
+            <Dependent Role="BlogComment">
+              <PropertyRef Name="BlogArticle_ArticleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BLOGDIGG_REFERENCE_BLOGARTI">
+          <End Role="BlogArticle" Type="RoRoWoDBModel.Store.BlogArticle" Multiplicity="0..1" />
+          <End Role="BlogDigg" Type="RoRoWoDBModel.Store.BlogDigg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogArticle">
+              <PropertyRef Name="ArticleID" />
+            </Principal>
+            <Dependent Role="BlogDigg">
+              <PropertyRef Name="BlogArticle_ArticleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RoRoWoDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="RoRoWoDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BlogArticle" EntityType="RoRoWoDBModel.BlogArticle" />
+          <EntitySet Name="BlogCategory" EntityType="RoRoWoDBModel.BlogCategory" />
+          <EntitySet Name="BlogComment" EntityType="RoRoWoDBModel.BlogComment" />
+          <EntitySet Name="BlogDigg" EntityType="RoRoWoDBModel.BlogDigg" />
+          <EntitySet Name="BlogMaster" EntityType="RoRoWoDBModel.BlogMaster" />
+          <EntitySet Name="BlogTag" EntityType="RoRoWoDBModel.BlogTag" />
+          <AssociationSet Name="FK_BLOGARTI_REFERENCE_BLOGCATE" Association="RoRoWoDBModel.FK_BLOGARTI_REFERENCE_BLOGCATE">
+            <End Role="BlogCategory" EntitySet="BlogCategory" />
+            <End Role="BlogArticle" EntitySet="BlogArticle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BLOGCOMM_REFERENCE_BLOGARTI" Association="RoRoWoDBModel.FK_BLOGCOMM_REFERENCE_BLOGARTI">
+            <End Role="BlogArticle" EntitySet="BlogArticle" />
+            <End Role="BlogComment" EntitySet="BlogComment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_BLOGDIGG_REFERENCE_BLOGARTI" Association="RoRoWoDBModel.FK_BLOGDIGG_REFERENCE_BLOGARTI">
+            <End Role="BlogArticle" EntitySet="BlogArticle" />
+            <End Role="BlogDigg" EntitySet="BlogDigg" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="BlogArticle">
+          <Key>
+            <PropertyRef Name="ArticleID" />
+          </Key>
+          <Property Name="ArticleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <Property Name="ImageUrl" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="Tag" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+          <Property Name="Hits" Type="Int32" Nullable="false" />
+          <Property Name="IsTop" Type="Boolean" Nullable="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserIP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="PublishTime" Type="DateTime" Nullable="false" />
+          <Property Name="UpdateTime" Type="DateTime" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+          <Property Name="BlogCategory_CateID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="BlogCategory" Relationship="RoRoWoDBModel.FK_BLOGARTI_REFERENCE_BLOGCATE" FromRole="BlogArticle" ToRole="BlogCategory" />
+          <NavigationProperty Name="BlogComment" Relationship="RoRoWoDBModel.FK_BLOGCOMM_REFERENCE_BLOGARTI" FromRole="BlogArticle" ToRole="BlogComment" />
+          <NavigationProperty Name="BlogDigg" Relationship="RoRoWoDBModel.FK_BLOGDIGG_REFERENCE_BLOGARTI" FromRole="BlogArticle" ToRole="BlogDigg" />
+        </EntityType>
+        <EntityType Name="BlogCategory">
+          <Key>
+            <PropertyRef Name="CateID" />
+          </Key>
+          <Property Name="CateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CateName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ParentID" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="SortID" Type="Int32" Nullable="false" />
+          <Property Name="ArticleCount" Type="Int32" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="BlogArticle" Relationship="RoRoWoDBModel.FK_BLOGARTI_REFERENCE_BLOGCATE" FromRole="BlogCategory" ToRole="BlogArticle" />
+        </EntityType>
+        <EntityType Name="BlogComment">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserID" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="IP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="VerifyUserID" Type="Int32" />
+          <Property Name="VerifyUserAccount" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BlogArticle_ArticleID" Type="Int32" />
+          <NavigationProperty Name="BlogArticle" Relationship="RoRoWoDBModel.FK_BLOGCOMM_REFERENCE_BLOGARTI" FromRole="BlogComment" ToRole="BlogArticle" />
+        </EntityType>
+        <EntityType Name="BlogDigg">
+          <Key>
+            <PropertyRef Name="AutoID" />
+          </Key>
+          <Property Name="AutoID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DiggName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="SurpportType" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="IP" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="BlogArticle_ArticleID" Type="Int32" />
+          <NavigationProperty Name="BlogArticle" Relationship="RoRoWoDBModel.FK_BLOGDIGG_REFERENCE_BLOGARTI" FromRole="BlogDigg" ToRole="BlogArticle" />
+        </EntityType>
+        <EntityType Name="BlogMaster">
+          <Key>
+            <PropertyRef Name="UserID" />
+          </Key>
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserAccount" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="NickName" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="UserPassWord" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="IsSystem" Type="Boolean" Nullable="false" />
+          <Property Name="State" Type="Int32" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="LoginCount" Type="Int32" Nullable="false" />
+          <Property Name="LastLogin" Type="DateTime" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="200" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="BlogTag">
+          <Key>
+            <PropertyRef Name="TagID" />
+          </Key>
+          <Property Name="TagID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="TagName" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="ParentID" Type="Int32" Nullable="false" />
+          <Property Name="State" Type="Int32" Nullable="false" />
+          <Property Name="SortID" Type="Int32" Nullable="false" />
+          <Property Name="ArticleCount" Type="Int32" Nullable="false" />
+          <Property Name="CreateTime" Type="DateTime" Nullable="false" />
+          <Property Name="Note" Type="String" MaxLength="400" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_BLOGARTI_REFERENCE_BLOGCATE">
+          <End Role="BlogCategory" Type="RoRoWoDBModel.BlogCategory" Multiplicity="1" />
+          <End Role="BlogArticle" Type="RoRoWoDBModel.BlogArticle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogCategory">
+              <PropertyRef Name="CateID" />
+            </Principal>
+            <Dependent Role="BlogArticle">
+              <PropertyRef Name="BlogCategory_CateID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BLOGCOMM_REFERENCE_BLOGARTI">
+          <End Role="BlogArticle" Type="RoRoWoDBModel.BlogArticle" Multiplicity="0..1" />
+          <End Role="BlogComment" Type="RoRoWoDBModel.BlogComment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogArticle">
+              <PropertyRef Name="ArticleID" />
+            </Principal>
+            <Dependent Role="BlogComment">
+              <PropertyRef Name="BlogArticle_ArticleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_BLOGDIGG_REFERENCE_BLOGARTI">
+          <End Role="BlogArticle" Type="RoRoWoDBModel.BlogArticle" Multiplicity="0..1" />
+          <End Role="BlogDigg" Type="RoRoWoDBModel.BlogDigg" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="BlogArticle">
+              <PropertyRef Name="ArticleID" />
+            </Principal>
+            <Dependent Role="BlogDigg">
+              <PropertyRef Name="BlogArticle_ArticleID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RoRoWoDBModelStoreContainer" CdmEntityContainer="RoRoWoDBEntities">
+          <EntitySetMapping Name="BlogArticle"><EntityTypeMapping TypeName="RoRoWoDBModel.BlogArticle"><MappingFragment StoreEntitySet="BlogArticle">
+            <ScalarProperty Name="ArticleID" ColumnName="ArticleID" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="Content" ColumnName="Content" />
+            <ScalarProperty Name="Description" ColumnName="Description" />
+            <ScalarProperty Name="ImageUrl" ColumnName="ImageUrl" />
+            <ScalarProperty Name="Tag" ColumnName="Tag" />
+            <ScalarProperty Name="Hits" ColumnName="Hits" />
+            <ScalarProperty Name="IsTop" ColumnName="IsTop" />
+            <ScalarProperty Name="State" ColumnName="State" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="UserIP" ColumnName="UserIP" />
+            <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+            <ScalarProperty Name="PublishTime" ColumnName="PublishTime" />
+            <ScalarProperty Name="UpdateTime" ColumnName="UpdateTime" />
+            <ScalarProperty Name="Note" ColumnName="Note" />
+            <ScalarProperty Name="BlogCategory_CateID" ColumnName="BlogCategory_CateID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="BlogCategory"><EntityTypeMapping TypeName="RoRoWoDBModel.BlogCategory"><MappingFragment StoreEntitySet="BlogCategory">
+            <ScalarProperty Name="CateID" ColumnName="CateID" />
+            <ScalarProperty Name="CateName" ColumnName="CateName" />
+            <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+            <ScalarProperty Name="State" ColumnName="State" />
+            <ScalarProperty Name="SortID" ColumnName="SortID" />
+            <ScalarProperty Name="ArticleCount" ColumnName="ArticleCount" />
+            <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+            <ScalarProperty Name="Note" ColumnName="Note" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="BlogComment"><EntityTypeMapping TypeName="RoRoWoDBModel.BlogComment"><MappingFragment StoreEntitySet="BlogComment">
+            <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+            <ScalarProperty Name="Title" ColumnName="Title" />
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="UserName" ColumnName="UserName" />
+            <ScalarProperty Name="Content" ColumnName="Content" />
+            <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+            <ScalarProperty Name="IP" ColumnName="IP" />
+            <ScalarProperty Name="State" ColumnName="State" />
+            <ScalarProperty Name="VerifyUserID" ColumnName="VerifyUserID" />
+            <ScalarProperty Name="VerifyUserAccount" ColumnName="VerifyUserAccount" />
+            <ScalarProperty Name="BlogArticle_ArticleID" ColumnName="BlogArticle_ArticleID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="BlogDigg"><EntityTypeMapping TypeName="RoRoWoDBModel.BlogDigg"><MappingFragment StoreEntitySet="BlogDigg">
+            <ScalarProperty Name="AutoID" ColumnName="AutoID" />
+            <ScalarProperty Name="DiggName" ColumnName="DiggName" />
+            <ScalarProperty Name="SurpportType" ColumnName="SurpportType" />
+            <ScalarProperty Name="State" ColumnName="State" />
+            <ScalarProperty Name="IP" ColumnName="IP" />
+            <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+            <ScalarProperty Name="BlogArticle_ArticleID" ColumnName="BlogArticle_ArticleID" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="BlogMaster"><EntityTypeMapping TypeName="RoRoWoDBModel.BlogMaster"><MappingFragment StoreEntitySet="BlogMaster">
+            <ScalarProperty Name="UserID" ColumnName="UserID" />
+            <ScalarProperty Name="UserAccount" ColumnName="UserAccount" />
+            <ScalarProperty Name="NickName" ColumnName="NickName" />
+            <ScalarProperty Name="UserPassWord" ColumnName="UserPassWord" />
+            <ScalarProperty Name="IsSystem" ColumnName="IsSystem" />
+            <ScalarProperty Name="State" ColumnName="State" />
+            <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+            <ScalarProperty Name="LoginCount" ColumnName="LoginCount" />
+            <ScalarProperty Name="LastLogin" ColumnName="LastLogin" />
+            <ScalarProperty Name="Note" ColumnName="Note" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="BlogTag"><EntityTypeMapping TypeName="RoRoWoDBModel.BlogTag"><MappingFragment StoreEntitySet="BlogTag">
+            <ScalarProperty Name="TagID" ColumnName="TagID" />
+            <ScalarProperty Name="TagName" ColumnName="TagName" />
+            <ScalarProperty Name="ParentID" ColumnName="ParentID" />
+            <ScalarProperty Name="State" ColumnName="State" />
+            <ScalarProperty Name="SortID" ColumnName="SortID" />
+            <ScalarProperty Name="ArticleCount" ColumnName="ArticleCount" />
+            <ScalarProperty Name="CreateTime" ColumnName="CreateTime" />
+            <ScalarProperty Name="Note" ColumnName="Note" />
+          </MappingFragment></EntityTypeMapping></EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="RoRoWoDB">
+        <EntityTypeShape EntityType="RoRoWoDBModel.BlogArticle" Width="1.5" PointX="3" PointY="2" Height="4.8353279622395835" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoRoWoDBModel.BlogCategory" Width="1.5" PointX="0.75" PointY="3.125" Height="2.7341113281249996" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoRoWoDBModel.BlogComment" Width="1.5" PointX="5.25" PointY="1.125" Height="3.3071704101562496" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoRoWoDBModel.BlogDigg" Width="1.5" PointX="5.25" PointY="5.25" Height="2.5430916341145817" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoRoWoDBModel.BlogMaster" Width="1.5" PointX="7.75" PointY="0.75" Height="2.9251310221354156" IsExpanded="true" />
+        <EntityTypeShape EntityType="RoRoWoDBModel.BlogTag" Width="1.5" PointX="0.75" PointY="7.75" Height="2.5430916341145817" IsExpanded="true" />
+        <AssociationConnector Association="RoRoWoDBModel.FK_BLOGARTI_REFERENCE_BLOGCATE" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="4.4920556640625" />
+          <ConnectorPoint PointX="3" PointY="4.4920556640625" />
+        </AssociationConnector>
+        <AssociationConnector Association="RoRoWoDBModel.FK_BLOGCOMM_REFERENCE_BLOGARTI" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="3.2160852050781248" />
+          <ConnectorPoint PointX="5.25" PointY="3.2160852050781248" />
+        </AssociationConnector>
+        <AssociationConnector Association="RoRoWoDBModel.FK_BLOGDIGG_REFERENCE_BLOGARTI" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="6.0426639811197917" />
+          <ConnectorPoint PointX="5.25" PointY="6.0426639811197917" />
+        </AssociationConnector>
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

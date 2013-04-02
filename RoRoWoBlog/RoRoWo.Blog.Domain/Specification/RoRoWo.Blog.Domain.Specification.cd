@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="RoRoWo.Blog.Domain.Specification.AndSpecification&lt;T&gt;">
+    <Position X="0.5" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAgAABAAAAAAAAAAAAAAAAAQAAAAAIAgA=</HashCode>
+      <FileName>Specification\AndSpecification~1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoRoWo.Blog.Domain.Specification.CompositeSpecification&lt;TEntity&gt;">
+    <Position X="1.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Specification\CompositeSpecification~1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoRoWo.Blog.Domain.Specification.DirectSpecification&lt;TEntity&gt;">
+    <Position X="6.75" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAQAAAAAIAAA=</HashCode>
+      <FileName>Specification\DirectSpecification~1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoRoWo.Blog.Domain.Specification.ExpressionBuilder">
+    <Position X="9.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAA=</HashCode>
+      <FileName>Specification\ExpressionBuilder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoRoWo.Blog.Domain.Specification.ExpressionVisitor_V3">
+    <Position X="9.5" Y="4.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>IEAABACAAAYwBAQAAAAAISDAAAAEAgACAFAAAAgEQAA=</HashCode>
+      <FileName>Specification\ExpressionVisitor_V3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoRoWo.Blog.Domain.Specification.NotSpecification&lt;TEntity&gt;">
+    <Position X="6" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAQAAAAAIAAA=</HashCode>
+      <FileName>Specification\NotSpecification~1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoRoWo.Blog.Domain.Specification.OrSpecification&lt;T&gt;">
+    <Position X="3" Y="5.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAgAABAAAAAAAAAAAAAAAAAQAAAAAIAgA=</HashCode>
+      <FileName>Specification\OrSpecification~1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoRoWo.Blog.Domain.Specification.ParameterRebinder">
+    <Position X="9.5" Y="2.25" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AEAAEAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Specification\ParametersRebinder.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RoRoWo.Blog.Domain.Specification.Specification&lt;TEntity&gt;">
+    <Position X="3.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABACAAAAAAAAAJAAAQBAAAAIAAA=</HashCode>
+      <FileName>Specification\Specification~1.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="RoRoWo.Blog.Domain.Specification.TrueSpecification&lt;TEntity&gt;">
+    <Position X="4.25" Y="3.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAIAAA=</HashCode>
+      <FileName>Specification\TrueSpecification.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="RoRoWo.Blog.Domain.Specification.ISpecification&lt;TEntity&gt;">
+    <Position X="1.25" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAIAAA=</HashCode>
+      <FileName>Specification\ISpecification~1.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

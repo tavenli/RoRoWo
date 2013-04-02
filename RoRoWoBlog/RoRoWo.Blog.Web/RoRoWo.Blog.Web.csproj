@@ -1,0 +1,791 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE57D83A-F8C5-4465-A111-B39195375F25}</ProjectGuid>
+    <ProjectTypeGuids>{F85E285D-A4E0-4152-9332-AB1D724D3325};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RoRoWo.Blog.Web</RootNamespace>
+    <AssemblyName>RoRoWo.Blog.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RoRoWo.Blog.Common\DependLib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Areas\MWeb\Controllers\ArticleController.cs" />
+    <Compile Include="Areas\MWeb\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\MWeb\Controllers\FUpLoadController.cs" />
+    <Compile Include="Areas\MWeb\Controllers\LoginController.cs" />
+    <Compile Include="Areas\MWeb\MWebAreaRegistration.cs" />
+    <Compile Include="Controllers\AjaxController.cs" />
+    <Compile Include="Controllers\BlogController.cs" />
+    <Compile Include="Controllers\PartialViewController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\MWeb\Views\Article\ArticleEdit.aspx" />
+    <Content Include="Areas\MWeb\Views\Article\ArticleList.aspx" />
+    <Content Include="Areas\MWeb\Views\Category\Edit.aspx" />
+    <Content Include="Areas\MWeb\Views\Category\List.aspx" />
+    <Content Include="Areas\MWeb\Views\Article\Welcome.aspx" />
+    <Content Include="Areas\MWeb\Views\Login\Index.aspx" />
+    <Content Include="Areas\MWeb\Views\Article\MainFrame.aspx" />
+    <Content Include="Areas\MWeb\Views\FUpLoad\Index.aspx" />
+    <Content Include="Areas\MWeb\Views\Shared\LogOut.aspx" />
+    <Content Include="Areas\MWeb\Views\Shared\ShowResult.aspx" />
+    <Content Include="Views\Ajax\Test.aspx" />
+    <Content Include="Views\Shared\VerifyImage.aspx" />
+    <Content Include="Content\Images\detect.gif" />
+    <Content Include="Content\Images\progress.gif" />
+    <Content Include="Content\Images\rss-big-sq.png" />
+    <Content Include="Content\Images\rss-sq.png" />
+    <Content Include="Content\Images\rss.gif" />
+    <Content Include="Content\Images\rss.png" />
+    <Content Include="Content\Images\xml.gif" />
+    <Content Include="Content\Images\xml.png" />
+    <Content Include="Content\MWeb\css\frame.css" />
+    <Content Include="Content\MWeb\css\frame.js" />
+    <Content Include="Content\MWeb\css\main.css" />
+    <Content Include="Content\MWeb\Editor\kindeditor.js" />
+    <Content Include="Content\MWeb\Editor\plugins\about.html" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\0.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\1.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\10.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\100.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\101.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\102.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\103.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\104.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\105.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\106.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\107.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\108.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\109.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\11.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\110.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\111.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\112.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\113.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\114.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\115.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\116.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\117.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\118.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\119.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\12.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\120.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\121.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\122.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\123.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\124.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\125.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\126.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\127.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\128.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\129.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\13.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\130.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\131.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\132.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\133.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\134.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\14.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\15.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\16.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\17.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\18.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\19.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\2.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\20.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\21.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\22.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\23.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\24.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\25.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\26.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\27.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\28.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\29.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\3.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\30.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\31.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\32.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\33.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\34.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\35.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\36.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\37.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\38.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\39.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\4.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\40.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\41.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\42.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\43.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\44.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\45.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\46.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\47.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\48.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\49.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\5.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\50.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\51.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\52.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\53.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\54.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\55.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\56.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\57.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\58.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\59.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\6.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\60.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\61.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\62.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\63.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\64.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\65.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\66.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\67.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\68.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\69.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\7.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\70.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\71.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\72.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\73.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\74.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\75.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\76.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\77.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\78.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\79.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\8.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\80.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\81.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\82.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\83.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\84.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\85.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\86.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\87.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\88.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\89.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\9.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\90.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\91.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\92.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\93.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\94.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\95.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\96.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\97.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\98.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\99.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\emoticons\qq.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\file_manager\file_manager.css" />
+    <Content Include="Content\MWeb\Editor\plugins\file_manager\file_manager.html" />
+    <Content Include="Content\MWeb\Editor\plugins\file_manager\file_manager.js" />
+    <Content Include="Content\MWeb\Editor\plugins\file_manager\images\file-16.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\file_manager\images\file-64.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\file_manager\images\folder-16.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\file_manager\images\folder-64.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\file_manager\images\go-up.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\flash.html" />
+    <Content Include="Content\MWeb\Editor\plugins\image\image.html" />
+    <Content Include="Content\MWeb\Editor\plugins\image\images\align_left.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\image\images\align_right.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\image\images\align_top.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\image\images\refresh.gif" />
+    <Content Include="Content\MWeb\Editor\plugins\link\link.html" />
+    <Content Include="Content\MWeb\Editor\plugins\media.html" />
+    <Content Include="Content\MWeb\Editor\plugins\plainpaste.html" />
+    <Content Include="Content\MWeb\Editor\plugins\wordpaste.html" />
+    <Content Include="Content\MWeb\Editor\skins\common\blank.gif" />
+    <Content Include="Content\MWeb\Editor\skins\common\editor.css" />
+    <Content Include="Content\MWeb\Editor\skins\common\flash.gif" />
+    <Content Include="Content\MWeb\Editor\skins\common\loading.gif" />
+    <Content Include="Content\MWeb\Editor\skins\common\media.gif" />
+    <Content Include="Content\MWeb\Editor\skins\common\rm.gif" />
+    <Content Include="Content\MWeb\Editor\skins\default.css" />
+    <Content Include="Content\MWeb\Editor\skins\default\default.gif" />
+    <Content Include="Content\MWeb\Editor\skins\tinymce.css" />
+    <Content Include="Content\MWeb\Editor\skins\tinymce\tinymce.gif" />
+    <Content Include="Content\MWeb\Ico\1.gif" />
+    <Content Include="Content\MWeb\Ico\2.gif" />
+    <Content Include="Content\MWeb\Ico\3.gif" />
+    <Content Include="Content\MWeb\Ico\4.gif" />
+    <Content Include="Content\MWeb\Ico\5.gif" />
+    <Content Include="Content\MWeb\Ico\6.gif" />
+    <Content Include="Content\MWeb\Ico\7.gif" />
+    <Content Include="Content\MWeb\Ico\add.gif" />
+    <Content Include="Content\MWeb\Ico\Announce.gif" />
+    <Content Include="Content\MWeb\Ico\Article.gif" />
+    <Content Include="Content\MWeb\Ico\Audio.gif" />
+    <Content Include="Content\MWeb\Ico\avi.gif" />
+    <Content Include="Content\MWeb\Ico\Big_HTop.gif" />
+    <Content Include="Content\MWeb\Ico\bmp.gif" />
+    <Content Include="Content\MWeb\Ico\Book.gif" />
+    <Content Include="Content\MWeb\Ico\Camera.gif" />
+    <Content Include="Content\MWeb\Ico\Card.gif" />
+    <Content Include="Content\MWeb\Ico\Clothing.gif" />
+    <Content Include="Content\MWeb\Ico\Computer.gif" />
+    <Content Include="Content\MWeb\Ico\Cosmetic.gif" />
+    <Content Include="Content\MWeb\Ico\Default.gif" />
+    <Content Include="Content\MWeb\Ico\delete.gif" />
+    <Content Include="Content\MWeb\Ico\doc_bug.gif" />
+    <Content Include="Content\MWeb\Ico\doc_find.gif" />
+    <Content Include="Content\MWeb\Ico\doc_page.gif" />
+    <Content Include="Content\MWeb\Ico\doc_paint.gif" />
+    <Content Include="Content\MWeb\Ico\doc_pic.gif" />
+    <Content Include="Content\MWeb\Ico\doc_rss.gif" />
+    <Content Include="Content\MWeb\Ico\doc_search.gif" />
+    <Content Include="Content\MWeb\Ico\doc_star.gif" />
+    <Content Include="Content\MWeb\Ico\error.gif" />
+    <Content Include="Content\MWeb\Ico\exportdoc.gif" />
+    <Content Include="Content\MWeb\Ico\exportxls.gif" />
+    <Content Include="Content\MWeb\Ico\exportxml.gif" />
+    <Content Include="Content\MWeb\Ico\folderclosed.gif" />
+    <Content Include="Content\MWeb\Ico\folderopen.gif" />
+    <Content Include="Content\MWeb\Ico\FriendSite.gif" />
+    <Content Include="Content\MWeb\Ico\go2edit.gif" />
+    <Content Include="Content\MWeb\Ico\GuestBook.gif" />
+    <Content Include="Content\MWeb\Ico\guide.gif" />
+    <Content Include="Content\MWeb\Ico\hot.gif" />
+    <Content Include="Content\MWeb\Ico\html.gif" />
+    <Content Include="Content\MWeb\Ico\ico_pc.gif" />
+    <Content Include="Content\MWeb\Ico\IsPhoto.gif" />
+    <Content Include="Content\MWeb\Ico\IsTop.gif" />
+    <Content Include="Content\MWeb\Ico\js.gif" />
+    <Content Include="Content\MWeb\Ico\link.gif" />
+    <Content Include="Content\MWeb\Ico\Mobile.gif" />
+    <Content Include="Content\MWeb\Ico\note_ok.gif" />
+    <Content Include="Content\MWeb\Ico\page_white_add.png" />
+    <Content Include="Content\MWeb\Ico\page_white_code.png" />
+    <Content Include="Content\MWeb\Ico\page_white_code_grape.png" />
+    <Content Include="Content\MWeb\Ico\page_white_code_gray.png" />
+    <Content Include="Content\MWeb\Ico\page_white_code_red.png" />
+    <Content Include="Content\MWeb\Ico\page_white_delete.png" />
+    <Content Include="Content\MWeb\Ico\page_white_edit.png" />
+    <Content Include="Content\MWeb\Ico\page_white_excel.png" />
+    <Content Include="Content\MWeb\Ico\page_white_find.png" />
+    <Content Include="Content\MWeb\Ico\page_white_get.png" />
+    <Content Include="Content\MWeb\Ico\page_white_go.png" />
+    <Content Include="Content\MWeb\Ico\page_white_office.png" />
+    <Content Include="Content\MWeb\Ico\page_white_put.png" />
+    <Content Include="Content\MWeb\Ico\pao.gif" />
+    <Content Include="Content\MWeb\Ico\pao_gray.gif" />
+    <Content Include="Content\MWeb\Ico\Photo.gif" />
+    <Content Include="Content\MWeb\Ico\pic.gif" />
+    <Content Include="Content\MWeb\Ico\popedit.gif" />
+    <Content Include="Content\MWeb\Ico\PortableComputer.gif" />
+    <Content Include="Content\MWeb\Ico\Product.gif" />
+    <Content Include="Content\MWeb\Ico\pub.gif" />
+    <Content Include="Content\MWeb\Ico\rar.gif" />
+    <Content Include="Content\MWeb\Ico\recommend.gif" />
+    <Content Include="Content\MWeb\Ico\RedirectLink.gif" />
+    <Content Include="Content\MWeb\Ico\rssspider.gif" />
+    <Content Include="Content\MWeb\Ico\sizeminus.gif" />
+    <Content Include="Content\MWeb\Ico\sizeplus.gif" />
+    <Content Include="Content\MWeb\Ico\Small_HTop.gif" />
+    <Content Include="Content\MWeb\Ico\Soft.gif" />
+    <Content Include="Content\MWeb\Ico\star_level1.gif" />
+    <Content Include="Content\MWeb\Ico\star_level2.gif" />
+    <Content Include="Content\MWeb\Ico\star_level3.gif" />
+    <Content Include="Content\MWeb\Ico\star_off.gif" />
+    <Content Include="Content\MWeb\Ico\star_on.gif" />
+    <Content Include="Content\MWeb\Ico\state1.gif" />
+    <Content Include="Content\MWeb\Ico\state2.gif" />
+    <Content Include="Content\MWeb\Ico\sVip.gif" />
+    <Content Include="Content\MWeb\Ico\sVip0.gif" />
+    <Content Include="Content\MWeb\Ico\sVip1.gif" />
+    <Content Include="Content\MWeb\Ico\sVip2.gif" />
+    <Content Include="Content\MWeb\Ico\sVip3.gif" />
+    <Content Include="Content\MWeb\Ico\sVip4.gif" />
+    <Content Include="Content\MWeb\Ico\swf.gif" />
+    <Content Include="Content\MWeb\Ico\tips.gif" />
+    <Content Include="Content\MWeb\Ico\top.gif" />
+    <Content Include="Content\MWeb\Ico\txt.gif" />
+    <Content Include="Content\MWeb\Ico\Upload.gif" />
+    <Content Include="Content\MWeb\Ico\webspider.gif" />
+    <Content Include="Content\MWeb\Ico\wmv.gif" />
+    <Content Include="Content\MWeb\images\admin_top_bg.jpg" />
+    <Content Include="Content\MWeb\images\admin_top_logo.gif" />
+    <Content Include="Content\MWeb\images\button_bg1.jpg" />
+    <Content Include="Content\MWeb\images\button_bg6.gif" />
+    <Content Include="Content\MWeb\images\button_bg7.gif" />
+    <Content Include="Content\MWeb\images\button_bg8.gif" />
+    <Content Include="Content\MWeb\images\img_pre_none.gif" />
+    <Content Include="Content\MWeb\images\input.gif" />
+    <Content Include="Content\MWeb\images\leftmenu_bg.gif" />
+    <Content Include="Content\MWeb\images\leftmenu_dt_bg.gif" />
+    <Content Include="Content\MWeb\images\leftmenu_li_on.gif" />
+    <Content Include="Content\MWeb\images\leftmenu_li_s.gif" />
+    <Content Include="Content\MWeb\images\lg_buttom.gif" />
+    <Content Include="Content\MWeb\images\login_t_img.gif" />
+    <Content Include="Content\MWeb\images\lor_bg.jpg" />
+    <Content Include="Content\MWeb\images\msg_ask.gif" />
+    <Content Include="Content\MWeb\images\msg_error.gif" />
+    <Content Include="Content\MWeb\images\msg_ok.gif" />
+    <Content Include="Content\MWeb\images\msg_stop.gif" />
+    <Content Include="Content\MWeb\images\mtitle_bg.gif" />
+    <Content Include="Content\MWeb\images\mtitle_bg.jpg" />
+    <Content Include="Content\MWeb\images\mtitle_l.jpg" />
+    <Content Include="Content\MWeb\images\mtitle_r.jpg" />
+    <Content Include="Content\MWeb\images\quick_bg.gif" />
+    <Content Include="Content\MWeb\images\Rule.gif" />
+    <Content Include="Content\MWeb\images\sd_buttom.jpg" />
+    <Content Include="Content\MWeb\images\sd_left_bg.jpg" />
+    <Content Include="Content\MWeb\images\sd_right_bg.jpg" />
+    <Content Include="Content\MWeb\images\sd_top_bg.jpg" />
+    <Content Include="Content\MWeb\images\tbody_toggle.gif" />
+    <Content Include="Content\MWeb\img\addnews.gif" />
+    <Content Include="Content\MWeb\img\adminico.gif" />
+    <Content Include="Content\MWeb\img\adminuserico.gif" />
+    <Content Include="Content\MWeb\img\admin_top_bg.jpg" />
+    <Content Include="Content\MWeb\img\albviewbg.gif" />
+    <Content Include="Content\MWeb\img\allbg.gif" />
+    <Content Include="Content\MWeb\img\allbtbg.gif" />
+    <Content Include="Content\MWeb\img\allbtbg2.gif" />
+    <Content Include="Content\MWeb\img\allmenu.gif" />
+    <Content Include="Content\MWeb\img\arr3.gif" />
+    <Content Include="Content\MWeb\img\arr4.gif" />
+    <Content Include="Content\MWeb\img\arrfc.gif" />
+    <Content Include="Content\MWeb\img\arrl.gif" />
+    <Content Include="Content\MWeb\img\arrr.gif" />
+    <Content Include="Content\MWeb\img\arttag.gif" />
+    <Content Include="Content\MWeb\img\base.css" />
+    <Content Include="Content\MWeb\img\base.js" />
+    <Content Include="Content\MWeb\img\blankbg.gif" />
+    <Content Include="Content\MWeb\img\bodybg.gif" />
+    <Content Include="Content\MWeb\img\book.gif" />
+    <Content Include="Content\MWeb\img\bottombg.gif" />
+    <Content Include="Content\MWeb\img\bt.gif" />
+    <Content Include="Content\MWeb\img\bulebg.gif" />
+    <Content Include="Content\MWeb\img\button_back.gif" />
+    <Content Include="Content\MWeb\img\button_bg1.jpg" />
+    <Content Include="Content\MWeb\img\button_ok.gif" />
+    <Content Include="Content\MWeb\img\button_reset.gif" />
+    <Content Include="Content\MWeb\img\button_save.gif" />
+    <Content Include="Content\MWeb\img\button_search.gif" />
+    <Content Include="Content\MWeb\img\cd.gif" />
+    <Content Include="Content\MWeb\img\channeladd.gif" />
+    <Content Include="Content\MWeb\img\channellist.gif" />
+    <Content Include="Content\MWeb\img\close.gif" />
+    <Content Include="Content\MWeb\img\color.htm" />
+    <Content Include="Content\MWeb\img\copy.gif" />
+    <Content Include="Content\MWeb\img\css.gif" />
+    <Content Include="Content\MWeb\img\dedeexplode.gif" />
+    <Content Include="Content\MWeb\img\dedeexplode2.gif" />
+    <Content Include="Content\MWeb\img\dfpic.gif" />
+    <Content Include="Content\MWeb\img\dir.gif" />
+    <Content Include="Content\MWeb\img\dir2.gif" />
+    <Content Include="Content\MWeb\img\error.gif" />
+    <Content Include="Content\MWeb\img\exbg.gif" />
+    <Content Include="Content\MWeb\img\exe.gif" />
+    <Content Include="Content\MWeb\img\exit.gif" />
+    <Content Include="Content\MWeb\img\exportdoc.gif" />
+    <Content Include="Content\MWeb\img\exportxls.gif" />
+    <Content Include="Content\MWeb\img\feedback-edit.gif" />
+    <Content Include="Content\MWeb\img\file_del.gif" />
+    <Content Include="Content\MWeb\img\file_dir.gif" />
+    <Content Include="Content\MWeb\img\file_edit.gif" />
+    <Content Include="Content\MWeb\img\file_htm.gif" />
+    <Content Include="Content\MWeb\img\file_move.gif" />
+    <Content Include="Content\MWeb\img\file_newdir.gif" />
+    <Content Include="Content\MWeb\img\file_newfile.gif" />
+    <Content Include="Content\MWeb\img\file_pic.gif" />
+    <Content Include="Content\MWeb\img\file_rename.gif" />
+    <Content Include="Content\MWeb\img\file_script.gif" />
+    <Content Include="Content\MWeb\img\file_swf.gif" />
+    <Content Include="Content\MWeb\img\file_topdir.gif" />
+    <Content Include="Content\MWeb\img\file_tt.gif" />
+    <Content Include="Content\MWeb\img\file_txt.gif" />
+    <Content Include="Content\MWeb\img\file_unknow.gif" />
+    <Content Include="Content\MWeb\img\file_uploadfile.gif" />
+    <Content Include="Content\MWeb\img\file_view.gif" />
+    <Content Include="Content\MWeb\img\flash.gif" />
+    <Content Include="Content\MWeb\img\fold.gif" />
+    <Content Include="Content\MWeb\img\frame-public.css" />
+    <Content Include="Content\MWeb\img\frame.css" />
+    <Content Include="Content\MWeb\img\frame.js" />
+    <Content Include="Content\MWeb\img\gif.gif" />
+    <Content Include="Content\MWeb\img\gtk-copy.png" />
+    <Content Include="Content\MWeb\img\gtk-del.png" />
+    <Content Include="Content\MWeb\img\gtk-edit.png" />
+    <Content Include="Content\MWeb\img\gtk-ex.png" />
+    <Content Include="Content\MWeb\img\gtk-ok.png" />
+    <Content Include="Content\MWeb\img\gtk-sadd.png" />
+    <Content Include="Content\MWeb\img\gtk-search.png" />
+    <Content Include="Content\MWeb\img\gtk-tmp.png" />
+    <Content Include="Content\MWeb\img\guide.gif" />
+    <Content Include="Content\MWeb\img\help.gif" />
+    <Content Include="Content\MWeb\img\htm.gif" />
+    <Content Include="Content\MWeb\img\ico-sysmsg.png" />
+    <Content Include="Content\MWeb\img\ico_area.gif" />
+    <Content Include="Content\MWeb\img\ico_auth.gif" />
+    <Content Include="Content\MWeb\img\ico_menu.gif" />
+    <Content Include="Content\MWeb\img\ico_pc.gif" />
+    <Content Include="Content\MWeb\img\idnbg1.gif" />
+    <Content Include="Content\MWeb\img\idnbgfoot.gif" />
+    <Content Include="Content\MWeb\img\image.gif" />
+    <Content Include="Content\MWeb\img\img.gif" />
+    <Content Include="Content\MWeb\img\img_pre_none.gif" />
+    <Content Include="Content\MWeb\img\indexbody.css" />
+    <Content Include="Content\MWeb\img\indextbg.gif" />
+    <Content Include="Content\MWeb\img\indextitlebg.gif" />
+    <Content Include="Content\MWeb\img\input.gif" />
+    <Content Include="Content\MWeb\img\itemcomenu.gif" />
+    <Content Include="Content\MWeb\img\itemcomenu2.gif" />
+    <Content Include="Content\MWeb\img\itemnote1.gif" />
+    <Content Include="Content\MWeb\img\itemnote2.gif" />
+    <Content Include="Content\MWeb\img\itemnote3.gif" />
+    <Content Include="Content\MWeb\img\item_tt2.gif" />
+    <Content Include="Content\MWeb\img\jpg.gif" />
+    <Content Include="Content\MWeb\img\jquery.js" />
+    <Content Include="Content\MWeb\img\js.gif" />
+    <Content Include="Content\MWeb\img\lbg.gif" />
+    <Content Include="Content\MWeb\img\leftmenu_bg.gif" />
+    <Content Include="Content\MWeb\img\leftmenu_bg2.gif" />
+    <Content Include="Content\MWeb\img\left_bg_top.gif" />
+    <Content Include="Content\MWeb\img\list.gif" />
+    <Content Include="Content\MWeb\img\listtag.gif" />
+    <Content Include="Content\MWeb\img\lmenubg.gif" />
+    <Content Include="Content\MWeb\img\loadinglit.gif" />
+    <Content Include="Content\MWeb\img\m-contract.gif" />
+    <Content Include="Content\MWeb\img\m-expand.gif" />
+    <Content Include="Content\MWeb\img\manage1.gif" />
+    <Content Include="Content\MWeb\img\mbcbg.gif" />
+    <Content Include="Content\MWeb\img\mbtbg.gif" />
+    <Content Include="Content\MWeb\img\menu-ex.png" />
+    <Content Include="Content\MWeb\img\menuarrow.gif" />
+    <Content Include="Content\MWeb\img\menubg.gif" />
+    <Content Include="Content\MWeb\img\menumember.gif" />
+    <Content Include="Content\MWeb\img\menuold.css" />
+    <Content Include="Content\MWeb\img\menusearch.gif" />
+    <Content Include="Content\MWeb\img\menu_bg.gif" />
+    <Content Include="Content\MWeb\img\menu_bottom.gif" />
+    <Content Include="Content\MWeb\img\menu_top.gif" />
+    <Content Include="Content\MWeb\img\mmenubg.gif" />
+    <Content Include="Content\MWeb\img\mmenubg2.gif" />
+    <Content Include="Content\MWeb\img\mp3.gif" />
+    <Content Include="Content\MWeb\img\mtbg1.gif" />
+    <Content Include="Content\MWeb\img\mtimg1.gif" />
+    <Content Include="Content\MWeb\img\mtitle_bg.gif" />
+    <Content Include="Content\MWeb\img\mtitle_bg.jpg" />
+    <Content Include="Content\MWeb\img\mtitle_l.jpg" />
+    <Content Include="Content\MWeb\img\mtitle_r.jpg" />
+    <Content Include="Content\MWeb\img\Nav1.gif" />
+    <Content Include="Content\MWeb\img\newitem.gif" />
+    <Content Include="Content\MWeb\img\newlinebg3.gif" />
+    <Content Include="Content\MWeb\img\newlinebg5.gif" />
+    <Content Include="Content\MWeb\img\newmenu-topright.gif" />
+    <Content Include="Content\MWeb\img\next.gif" />
+    <Content Include="Content\MWeb\img\note_error.gif" />
+    <Content Include="Content\MWeb\img\note_ok.gif" />
+    <Content Include="Content\MWeb\img\open.gif" />
+    <Content Include="Content\MWeb\img\part-index.gif" />
+    <Content Include="Content\MWeb\img\part-list.gif" />
+    <Content Include="Content\MWeb\img\part-sgpage.gif" />
+    <Content Include="Content\MWeb\img\part-url.gif" />
+    <Content Include="Content\MWeb\img\parttag.gif" />
+    <Content Include="Content\MWeb\img\pbg.gif" />
+    <Content Include="Content\MWeb\img\php.gif" />
+    <Content Include="Content\MWeb\img\picview.gif" />
+    <Content Include="Content\MWeb\img\picviewnone.gif" />
+    <Content Include="Content\MWeb\img\pic_dir.gif" />
+    <Content Include="Content\MWeb\img\plan.gif" />
+    <Content Include="Content\MWeb\img\pview.gif" />
+    <Content Include="Content\MWeb\img\quick_bg.gif" />
+    <Content Include="Content\MWeb\img\re-write1.gif" />
+    <Content Include="Content\MWeb\img\righttopbg.gif" />
+    <Content Include="Content\MWeb\img\rm.gif" />
+    <Content Include="Content\MWeb\img\scrdw.gif" />
+    <Content Include="Content\MWeb\img\scrup.gif" />
+    <Content Include="Content\MWeb\img\SmallSpyGlassWithTransperancy_17x18.png" />
+    <Content Include="Content\MWeb\img\spectag.gif" />
+    <Content Include="Content\MWeb\img\sp_bg.gif" />
+    <Content Include="Content\MWeb\img\state1.gif" />
+    <Content Include="Content\MWeb\img\state2.gif" />
+    <Content Include="Content\MWeb\img\style2tbgr.gif" />
+    <Content Include="Content\MWeb\img\swfupload.css" />
+    <Content Include="Content\MWeb\img\tbg.gif" />
+    <Content Include="Content\MWeb\img\tbgv.gif" />
+    <Content Include="Content\MWeb\img\tbody_toggle.gif" />
+    <Content Include="Content\MWeb\img\toggle_menu.gif" />
+    <Content Include="Content\MWeb\img\topbg.gif" />
+    <Content Include="Content\MWeb\img\topbg2.gif" />
+    <Content Include="Content\MWeb\img\topitem2.gif" />
+    <Content Include="Content\MWeb\img\topitembg.gif" />
+    <Content Include="Content\MWeb\img\toprightbg.gif" />
+    <Content Include="Content\MWeb\img\tree_explode.gif" />
+    <Content Include="Content\MWeb\img\tree_page.gif" />
+    <Content Include="Content\MWeb\img\tree_part.gif" />
+    <Content Include="Content\MWeb\img\txt.gif" />
+    <Content Include="Content\MWeb\img\view_img.gif" />
+    <Content Include="Content\MWeb\img\wbg.gif" />
+    <Content Include="Content\MWeb\img\wmv.gif" />
+    <Content Include="Content\MWeb\img\write1.gif" />
+    <Content Include="Content\MWeb\img\write2.gif" />
+    <Content Include="Content\MWeb\img\zip.gif" />
+    <Content Include="Content\PicMark\WaterMark.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke.css" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\AdZoneBottom.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\AdZoneTop.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\bg.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\BGCBottom.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\BGCTop.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\bg_diag.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\btn_tweet.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\c.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\comment.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\date.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\docomment.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\email_go.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\fade-butt.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\Footer.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\geekgicon.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\go.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\HeaderBottom.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\HeaderTop.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\HeadUnBottom.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\HeadUnTop.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\HRBottom.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\HRTop.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Applications.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Burn.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Computer-g5-front.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Computer-g5-side.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Computer-imac-g5.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Connect.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Customize.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Delete.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Documents.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Eject.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Favorites.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Find.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Get-info.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Movies.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Music.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\New folder.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Pictures.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\Public.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\icon\zblog.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\links_r.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\logo.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\media.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\menu1.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\menu2.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\menu3.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\menu4.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\menu5.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\menu6.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\navbg.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\navbg2.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\newcomment.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\Novo_Dangos_001.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\Novo_Dangos_001.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\pointblue.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\PostContentBlockLiIco.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\PostHeadBottom.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\PostHeadTop.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\printer.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\quote.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\quote2.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\searchbg.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\Submissions.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\tag_green.png" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\textfield_bg.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\title-bg.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\topbacking.gif" />
+    <Content Include="Content\Themes\Qeeke\Style\Qeeke\view.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\base.js" />
+    <Content Include="Scripts\Calendar.js" />
+    <Content Include="Scripts\dialog\dialog.css" />
+    <Content Include="Scripts\dialog\dialog.js" />
+    <Content Include="Scripts\dialog\images\btn1.gif" />
+    <Content Include="Scripts\dialog\images\btn2.gif" />
+    <Content Include="Scripts\dialog\images\dialog_close_button.gif" />
+    <Content Include="Scripts\dialog\images\linebox_h1_span.gif" />
+    <Content Include="Scripts\dialog\images\loading.gif" />
+    <Content Include="Scripts\dialog\images\login_h1.gif" />
+    <Content Include="Scripts\dialog\images\message_confirm.gif" />
+    <Content Include="Scripts\dialog\images\message_notice.gif" />
+    <Content Include="Scripts\dialog\images\message_warning.gif" />
+    <Content Include="Scripts\jquery.form.js" />
+    <Content Include="Scripts\jquery.ui.js" />
+    <Content Include="Views\Blog\Index.aspx" />
+    <Content Include="Views\Blog\PostView.aspx" />
+    <Content Include="Views\Shared\BlogFooter.ascx" />
+    <Content Include="Views\Shared\BlogHeader.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\MWeb\Models\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\MWeb\Views\Web.config" />
+    <Content Include="Config\Unity\unity.di.blog.config">
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Content\Themes\Qeeke\Style\Qeeke\icon\Thumbs.db" />
+    <None Include="Content\Themes\Qeeke\Style\Qeeke\Thumbs.db" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcPager\MvcPager.csproj">
+      <Project>{23C75583-F15F-4464-BD48-6E5C656D7B78}</Project>
+      <Name>MvcPager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Cache\RoRoWo.Blog.Cache.csproj">
+      <Project>{EC2D3953-E6D0-483A-A689-67AB1B7309B2}</Project>
+      <Name>RoRoWo.Blog.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Common\RoRoWo.Blog.Common.csproj">
+      <Project>{10210E2B-2A6E-49E1-9873-32E62D994E58}</Project>
+      <Name>RoRoWo.Blog.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Domain.Entities\RoRoWo.Blog.Domain.Entities.csproj">
+      <Project>{0B0E6DEF-F175-475C-A9E1-5A238E1F6B16}</Project>
+      <Name>RoRoWo.Blog.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Domain\RoRoWo.Blog.Domain.csproj">
+      <Project>{C194F3EE-87DD-43E4-9FE3-A47F49612141}</Project>
+      <Name>RoRoWo.Blog.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Infrastructure\RoRoWo.Blog.Infrastructure.csproj">
+      <Project>{0DE75E24-E57C-4002-9F45-4B831BB9DDD9}</Project>
+      <Name>RoRoWo.Blog.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.IoC\RoRoWo.Blog.IoC.csproj">
+      <Project>{F7EAF53D-9A87-46BC-A940-52513AB15720}</Project>
+      <Name>RoRoWo.Blog.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Model\RoRoWo.Blog.Model.csproj">
+      <Project>{883CFC97-E0C6-4135-8767-81A9B1FE2C85}</Project>
+      <Name>RoRoWo.Blog.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Repository\RoRoWo.Blog.Repository.csproj">
+      <Project>{BB44F98D-1624-424B-8398-5A1B6E623A0C}</Project>
+      <Name>RoRoWo.Blog.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Services\RoRoWo.Blog.Services.csproj">
+      <Project>{916DC5B2-FFEA-4BA1-9A65-C25357A91305}</Project>
+      <Name>RoRoWo.Blog.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Utility\RoRoWo.Blog.Utility.csproj">
+      <Project>{57685651-6A45-4D25-8788-0DDE2B093344}</Project>
+      <Name>RoRoWo.Blog.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>False</AutoAssignPort>
+          <DevelopmentServerPort>5555</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

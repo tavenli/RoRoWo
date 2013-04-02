@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DD6F6FFD-EC7A-4BD4-944A-C00A2166A81C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RoRoWo.Blog.UnitTest</RootNamespace>
+    <AssemblyName>RoRoWo.Blog.UnitTest</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.Unity, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RoRoWo.Blog.Common\DependLib\Microsoft.Practices.Unity.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=2.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\RoRoWo.Blog.Common\DependLib\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\RoRoWo.Blog.Common\DependLib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="nunit.mocks">
+      <HintPath>..\RoRoWo.Blog.Common\DependLib\nunit.mocks.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Web.Mvc, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <CodeAnalysisDependentAssemblyPaths Condition=" '$(VS100COMNTOOLS)' != '' " Include="$(VS100COMNTOOLS)..\IDE\PrivateAssemblies">
+      <Visible>False</Visible>
+    </CodeAnalysisDependentAssemblyPaths>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AjaxControllerTest.cs" />
+    <Compile Include="ArticleRepositoryTest.cs" />
+    <Compile Include="ArticleServicesTest.cs" />
+    <Compile Include="CategoryRepositoryTest.cs" />
+    <Compile Include="NUnitTest\ArticleRepositoryTest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MvcPager\MvcPager.csproj">
+      <Project>{23C75583-F15F-4464-BD48-6E5C656D7B78}</Project>
+      <Name>MvcPager</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Cache\RoRoWo.Blog.Cache.csproj">
+      <Project>{EC2D3953-E6D0-483A-A689-67AB1B7309B2}</Project>
+      <Name>RoRoWo.Blog.Cache</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Common\RoRoWo.Blog.Common.csproj">
+      <Project>{10210E2B-2A6E-49E1-9873-32E62D994E58}</Project>
+      <Name>RoRoWo.Blog.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Domain.Entities\RoRoWo.Blog.Domain.Entities.csproj">
+      <Project>{0B0E6DEF-F175-475C-A9E1-5A238E1F6B16}</Project>
+      <Name>RoRoWo.Blog.Domain.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Domain\RoRoWo.Blog.Domain.csproj">
+      <Project>{C194F3EE-87DD-43E4-9FE3-A47F49612141}</Project>
+      <Name>RoRoWo.Blog.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Infrastructure\RoRoWo.Blog.Infrastructure.csproj">
+      <Project>{0DE75E24-E57C-4002-9F45-4B831BB9DDD9}</Project>
+      <Name>RoRoWo.Blog.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.IoC\RoRoWo.Blog.IoC.csproj">
+      <Project>{F7EAF53D-9A87-46BC-A940-52513AB15720}</Project>
+      <Name>RoRoWo.Blog.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Model\RoRoWo.Blog.Model.csproj">
+      <Project>{883CFC97-E0C6-4135-8767-81A9B1FE2C85}</Project>
+      <Name>RoRoWo.Blog.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Repository\RoRoWo.Blog.Repository.csproj">
+      <Project>{BB44F98D-1624-424B-8398-5A1B6E623A0C}</Project>
+      <Name>RoRoWo.Blog.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Services\RoRoWo.Blog.Services.csproj">
+      <Project>{916DC5B2-FFEA-4BA1-9A65-C25357A91305}</Project>
+      <Name>RoRoWo.Blog.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Utility\RoRoWo.Blog.Utility.csproj">
+      <Project>{57685651-6A45-4D25-8788-0DDE2B093344}</Project>
+      <Name>RoRoWo.Blog.Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RoRoWo.Blog.Web\RoRoWo.Blog.Web.csproj">
+      <Project>{BE57D83A-F8C5-4465-A111-B39195375F25}</Project>
+      <Name>RoRoWo.Blog.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Config\Unity\unity.di.blog.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
